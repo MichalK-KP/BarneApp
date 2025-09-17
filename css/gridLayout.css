@@ -1,0 +1,81 @@
+*{margin: 0;}
+
+#container{
+    max-width: 1200px;  /*Maks bredde skal vi ha det?*/
+    margin: 0px auto; /*Midtstiller containeren i nettleseren*/
+}
+
+header{
+    background-color: lightblue;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+main{
+    background-color: lightcoral;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr 1fr 1fr;
+    grid-template-areas: "s o j"
+                         ". o ."
+                         ". o f"
+                         ". a ."
+                         "v a h";
+    gap: 10px;
+}
+
+#score{
+    grid-area: s;
+}
+
+#oppgave{
+    grid-area: o;
+}
+
+#hjelp{
+    grid-area: j;  
+}
+
+#svar{
+    grid-area: f;  /*f som fasit*/
+}
+
+#svaralternativ{
+    grid-area: a;
+    /*Skal svarboksene være flex bokser eller i et grid?*/
+}
+
+#pilVenstre{
+    grid-area: v;
+}
+
+#pilHoyre{
+    grid-area: h;
+}
+
+main > div{  /*Gjelder alle div direkte under main*/
+    /*border: 1px solid black;*/
+    display: flex;  /*Har gjort alle til flex for å midstille de her må man gjøre justeringer*/
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+/*reponsive hvis skjermstørrelsen er mindre enn 980px*/
+@media screen and (max-width: 760px){
+    main{
+        background-color: lightcoral;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 4fr 1fr 2fr 1fr;
+        grid-template-areas: "s j"
+                             "o o"
+                             "f ."
+                             "a a"
+                             "v h";
+        gap: 10px;
+    }
+}
