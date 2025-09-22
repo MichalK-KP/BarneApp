@@ -51,6 +51,7 @@ main{
 #svarbokser{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
 }
 
 #pilVenstre{
@@ -87,3 +88,4 @@ main > div{  /*Gjelder alle div direkte under main*/
     }
 
 }
+
