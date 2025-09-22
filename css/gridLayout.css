@@ -25,7 +25,7 @@ main{
     gap: 10px;
 }
 
-#score{
+#scorebox{
     grid-area: s;
 }
 

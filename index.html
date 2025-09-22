@@ -5,21 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
      <link rel="stylesheet" href="css/gridLayout.css">
+     <script src="script.js"></script>
 </head>
 <body>
     <div id="container">
         <header><h1>Overskrift</h1></header>
         <main>
-                <div id="score">Score</div>
-                <div id="hjelp">Hjelp</div>
-                <div id="oppgave">Oppgave</div>
-                <div id="svar">Svar</div>
+                <div id="scorebox">
+                    <h3>Score:</h3>
+                    <p id="score"></p>
+
+                </div>
+                <div id="hjelp" onclick="hjelp()">
+                    <button>Hjelp</button>
+
+                </div>
+                <div id="oppgave">Oppgave
+
+                </div>
+                <div id="svar">
+
+                </div>
                 <div id="svaralternativ">
                     Svaralternativ
-                    <!--Her legges svar alternativ boksene-->
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
                 </div>
-                <div id="pilVenstre">Pilvenstre</div>
-                <div id="pilHoyre">PilHoyre</div>
+                <div id="pilVenstre">
+                    <button>Pilvenstre</button>
+                    
+
+                </div>
+                <div id="pilHoyre">
+                    <button>PilHoyre</button>
+                </div>
         </main>
         <footer></footer>
     </div>
