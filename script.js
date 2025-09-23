@@ -39,13 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
         numbersArray.forEach(num => {
             const btn = document.createElement("button")
             btn.textContent = num
-            btn.disabled = false // make sure button is enabled
+            btn.disabled = false 
             btn.addEventListener("click", () => {
                 if (num === solution) {
                     btn.style.backgroundColor = "lightgreen"
                     score++
                     ScoreCount.textContent = score
-                    // go to next question after short delay
+                    
                     setTimeout(() => generateQuestion(), 700)
                 } else {
                     btn.style.backgroundColor = "lightcoral"
@@ -76,10 +76,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+let track = 0
+let newdiv = document.createElement("div")
 
 function hjelp(){
-    console.log("abc")
+    let btn = document.getElementById("btn")
+    let container = document.getElementById("hjelp")
+
+    if (track == 0) {
+     btn.style.backgroundColor = "darkgray";
+     console.log("container")
+
+     newdiv.textContent = "Regn ut matte oppgaven deretter trykk på svaret som er riktig"
+     container.appendChild(newdiv)
+     newdiv.style.backgroundColor = "white"
+     track +=1
+    } else{
+        btn.style.backgroundColor = "white"
+        newdiv.textContent = ""
+        container.removeChild(newdiv)
+        track -=1
+    }
+
+
+
 }
 
 function PilHoyre(){
