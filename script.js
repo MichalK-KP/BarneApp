@@ -50,21 +50,21 @@ document.addEventListener("DOMContentLoaded", function () {
             btn.addEventListener("click", () => {
                 if (num === solution) {
                     // Riktig svar
-                    spillRiktigLyd(); // Spill riktig lyd
-                    btn.style.backgroundColor = "lightgreen"
+                    spillRiktigLyd();
+                    btn.classList.add("correct")
                     score++
                     ScoreCount.textContent = score
                     setTimeout(() => generateQuestion(), 700)
                 } else {
                     // Feil svar
-                    spillFeilLyd(); // Spill feil lyd
-                    btn.style.backgroundColor = "lightcoral"
+                    spillFeilLyd();
+                    btn.classList.add("wrong")
                     tries++
                     if (tries >= maxTries) {
                         // Viser riktig svar hvis for mange feil
                         Array.from(buttonsContainer.children).forEach(b => {
                             if (parseInt(b.textContent) === solution) {
-                                b.style.backgroundColor = "lightgreen"
+                                b.classList.add("correct")
                                 svarbox.textContent = solution
                             }
                             b.disabled = true
@@ -80,11 +80,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     generateQuestion() // Starter første oppgave
+
+    // Vis hjelp automatisk ved oppstart
+    if (typeof hjelp === 'function') {
+        try { hjelp() } catch (e) {}
+    }
 })
 
 // Variabler for hjelp-knappen
 let track = 0
 let newdiv = document.createElement("div")
+newdiv.className = "hjelp-popup"
 
 // Funksjon for å vise/skjule hjelp
 function hjelp(){
@@ -93,7 +99,6 @@ function hjelp(){
 
     if (track == 0) {
         btn.style.backgroundColor = "darkgray";
-        console.log("container")
         newdiv.textContent = "Regn ut matte oppgaven deretter trykk på svaret som er riktig"
         container.appendChild(newdiv)
         newdiv.style.backgroundColor = "white"

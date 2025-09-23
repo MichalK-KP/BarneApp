@@ -132,3 +132,19 @@ li {
     align-items: center;
     border-radius: 20px;
 }
+
+/* Help popup - positioned overlay so it doesn't shift layout */
+#hjelp { position: relative; }
+.hjelp-popup{
+    position: absolute;
+    top: 110%;
+    left: 0;
+    z-index: 20;
+    max-width: 360px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    padding: 12px 14px;
+    color: #111827;
+}
