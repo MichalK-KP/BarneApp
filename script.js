@@ -42,12 +42,14 @@ document.addEventListener("DOMContentLoaded", function () {
             btn.disabled = false 
             btn.addEventListener("click", () => {
                 if (num === solution) {
+                    spillRiktigLyd(); // Spill riktig lyd
                     btn.style.backgroundColor = "lightgreen"
                     score++
                     ScoreCount.textContent = score
                     
                     setTimeout(() => generateQuestion(), 700)
                 } else {
+                    spillFeilLyd(); // Spill feil lyd
                     btn.style.backgroundColor = "lightcoral"
                     tries++
                     if (tries >= maxTries) {
@@ -56,7 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             if (parseInt(b.textContent) === solution) {
                                 b.style.backgroundColor = "lightgreen"
                                 svarbox.textContent = solution
-
                             }
                             b.disabled = true
                         })
@@ -109,4 +110,24 @@ function PilHoyre(){
 
 function PilVenstre(){
     console.log(987)
+}
+
+function spillRiktigLyd() {
+    document.getElementById('riktigLyd').play();
+}
+
+function spillFeilLyd() {
+    document.getElementById('feilLyd').play();
+}
+
+// Når brukeren svarer, kall spillRiktigLyd() eller spillFeilLyd()
+// Eksempel:
+function sjekkSvar(erRiktig) {
+    if (erRiktig) {
+        spillRiktigLyd();
+        // ... annen kode for riktig svar ...
+    } else {
+        spillFeilLyd();
+        // ... annen kode for feil svar ...
+    }
 }
