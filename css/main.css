@@ -1,0 +1,128 @@
+/* Reset some default styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, button, input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+    min-height: 100vh;
+    color: #22223b;
+    padding: 32px;
+}
+
+/* Main container styling */
+.container, main, .app-wrapper {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(30, 41, 59, 0.08);
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 32px 24px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #3a3a5a;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+/* Buttons */
+button, .btn {
+    background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+    margin-top: 12px;
+}
+
+button:hover, .btn:hover {
+    background: linear-gradient(90deg, #4f46e5 0%, #2563eb 100%);
+}
+
+/* Inputs */
+input, select, textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #c7d2fe;
+    border-radius: 7px;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    background: #f1f5f9;
+    transition: border 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #6366f1;
+    outline: none;
+}
+
+/* Lists */
+ul, ol {
+    margin: 18px 0;
+    padding-left: 24px;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+/* Cards or panels */
+.card, .panel {
+    background: #f8fafc;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.04);
+    padding: 18px 16px;
+    margin-bottom: 18px;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-2 { margin-top: 16px; }
+.mt-4 { margin-top: 32px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-4 { margin-bottom: 32px; }
+
+/* Responsive */
+@media (max-width: 700px) {
+    .container, main, .app-wrapper {
+        padding: 16px 6px;
+        max-width: 98vw;
+    }
+    body {
+        padding: 8px;
+    }
+}
+
+#score{
+    display: flex;
+    position: relative;
+    left: 15px;
+    bottom: 8px;
+}
