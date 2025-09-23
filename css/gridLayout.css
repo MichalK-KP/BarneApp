@@ -34,7 +34,10 @@ main{
 }
 
 #hjelp{
-    grid-area: j;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #svar{
