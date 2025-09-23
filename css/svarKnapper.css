@@ -9,6 +9,30 @@
     background-color: yellow;
 }
 
+/* Feedback states */
+#svarbokser > button.correct{
+    background: #22c55e !important; /* solid green */
+    background-image: none !important; /* remove gradients */
+    color: #fff;
+}
+
+#svarbokser > button.wrong{
+    background: #ef4444 !important; /* solid red */
+    background-image: none !important; /* remove gradients */
+    color: #fff;
+}
+
+/* Keep feedback on hover */
+#svarbokser > button.correct:hover{
+    background: #16a34a !important;
+    background-image: none !important;
+}
+
+#svarbokser > button.wrong:hover{
+    background: #dc2626 !important;
+    background-image: none !important;
+}
+
 #pilVenstre > button, #pilHoyre > button{
     display: flex;
     justify-content: center;
