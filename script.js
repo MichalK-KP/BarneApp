@@ -54,12 +54,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     btn.style.backgroundColor = "lightgreen"
                     score++
                     ScoreCount.textContent = score
+                    visGif(true)
                     setTimeout(() => generateQuestion(), 700)
                 } else {
                     // Feil svar
                     spillFeilLyd(); // Spill feil lyd
                     btn.style.backgroundColor = "lightcoral"
                     tries++
+                    visGif(false)
                     if (tries >= maxTries) {
                         // Viser riktig svar hvis for mange feil
                         Array.from(buttonsContainer.children).forEach(b => {
@@ -133,5 +135,23 @@ function sjekkSvar(erRiktig) {
     } else {
         spillFeilLyd();
         // ... annen kode for feil svar ...
+    }
+}
+
+
+function visGif(correct){
+    const gifDiv = document.querySelector("#gif-container");
+    if(correct){
+        gifDiv.innerHTML =  `<img src="Assets/planktonCorrect.gif" alt="Correct gif"></img>`;
+        gifDiv.style.display = "flex";
+        setTimeout(function(){
+            gifDiv.style.display = "none"
+        }, 1500)
+    } else{
+        gifDiv.innerHTML =  `<img src="Assets/wrong.gif" alt="Wrong gif"></img>`;
+        gifDiv.style.display = "flex";
+        setTimeout(function(){
+            gifDiv.style.display = "none"
+        }, 1500)
     }
 }
