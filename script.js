@@ -50,12 +50,14 @@ document.addEventListener("DOMContentLoaded", function () {
             btn.addEventListener("click", () => {
                 if (num === solution) {
                     // Riktig svar
+                    spillRiktigLyd(); // Spill riktig lyd
                     btn.style.backgroundColor = "lightgreen"
                     score++
                     ScoreCount.textContent = score
                     setTimeout(() => generateQuestion(), 700)
                 } else {
                     // Feil svar
+                    spillFeilLyd(); // Spill feil lyd
                     btn.style.backgroundColor = "lightcoral"
                     tries++
                     if (tries >= maxTries) {
